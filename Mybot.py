@@ -30,22 +30,22 @@ class Mybot:
         sql.execute(query)
         data=sql.fetchall()
         jmldata = sql.rowcount
-        kumpuldata=''
+        datacollect=''
         if(jmldata>0):
             #print(data)
             no=0
             for x in data:
                 no += 1
-                kumpuldata =kumpuldata+ str(x)
-                print(kumpuldata)
-                kumpuldata = kumpuldata.replace('(', '')
-                kumpuldata = kumpuldata.replace(')', '')
-                kumpuldata = kumpuldata.replace("'", '')
-                kumpuldata = kumpuldata.replace(",", '')
+                datacollect =datacollect+ str(x)
+                print(datacollect)
+                datacollect = datacollect.replace('(', '')
+                datacollect = datacollect.replace(')', '')
+                datacollect = datacollect.replace("'", '')
+                datacollect = datacollect.replace(",", '')
         else:
             print('data kosong')
 
-        myBot.reply_to(message,str(kumpuldata))
+        myBot.reply_to(message,str(datacollect))
 
 print(myDb)
 print("-- Bot sedang berjalan --")
